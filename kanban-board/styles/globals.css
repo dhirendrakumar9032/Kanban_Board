@@ -4,23 +4,23 @@
 
 :root {
   /* Light mode colors */
-  --background-color: #ffffff;
-  --text-color: #333333;
-  --primary-color: #4f46e5; /* Indigo */
-  --secondary-color: #64748b;
-  --margin: 0px;
-  --scrollbar-thumb-color: #4f46e5; /* You can adjust this color as needed */
-  --scrollbar-thumb-task-color: #60a5fa; /* Lighter blue for tasks, adjust as needed */
-}
-
-.dark {
-  /* Dark mode colors */
   --background-color: #111827;
   --text-color: #f9fafb;
   --primary-color: #818cf8;
   --secondary-color: #94a3b8;
-  --scrollbar-thumb-color: #818cf8; /* You can adjust this color as needed */
-  --scrollbar-thumb-task-color: #93c5fd; /* Lighter blue for tasks, adjust as needed */
+  --scrollbar-thumb-color: #ABB2B9; 
+  --scrollbar-thumb-task-color: #ABB2B9
+ 
+}
+
+.light {
+  /* Dark mode colors */
+  --background-color: #FEF9E7;
+  --text-color: #333333;
+  --primary-color: #4f46e5;
+  --secondary-color: #64748b;
+  --scrollbar-thumb-color: #ABB2B9; 
+  --scrollbar-thumb-task-color: #ABB2B9; 
 }
 
 body {
@@ -38,16 +38,15 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb-color);
-  border-radius: 0.75rem; /* equivalent to rounded-xl in Tailwind */
+  border-radius: 0.75rem; 
 }
 
 .task > ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb-task-color);
-  border-radius: 0.75rem; /* equivalent to rounded-xl in Tailwind */
+  border-radius: 0.75rem; 
 }
 
 a {
   color: var(--primary-color);
 }
 
-/* Add other global styles and element selectors as needed */

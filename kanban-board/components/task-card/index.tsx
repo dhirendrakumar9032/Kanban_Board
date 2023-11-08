@@ -46,9 +46,7 @@ function TaskCard({ task, deleteTask, updateTask }: Props) {
         ref={setNodeRef}
         style={style}
         className="
-        opacity-30
-      bg-mainBackgroundColor p-2.5 h-[100px] min-h-[100px] items-center flex text-left rounded-xl border-2 border-rose-500  cursor-grab relative
-      "
+        opacity-30 bg-mainBackgroundColor p-2.5 h-[100px] min-h-[100px] items-center flex text-left rounded-xl border-2 border-rose-500  cursor-grab relative"
       />
     );
   }
@@ -64,9 +62,7 @@ function TaskCard({ task, deleteTask, updateTask }: Props) {
       >
         <textarea
           className="
-        h-[90%]
-        w-full resize-none border-none rounded bg-transparent text-white focus:outline-none
-        "
+          h-[90%] w-full resize-none border-none rounded bg-transparent text-white focus:outline-none"
           value={task.content}
           autoFocus
           placeholder="Task content here"
