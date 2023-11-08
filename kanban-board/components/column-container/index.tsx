@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import PlusIcon from "../../icons/PlusIcon";
 import TaskCard from "../task-card";
 
-interface Props {
+interface ColumnContainerProps {
   column: Column;
   deleteColumn: (id: Id) => void;
   updateColumn: (id: Id, title: string) => void;
@@ -16,17 +16,17 @@ interface Props {
   tasks: Task[];
 }
 
-function ColumnContainer({
-  column,
-  deleteColumn,
-  updateColumn,
-  createTask,
-  tasks,
-  deleteTask,
-  updateTask,
-}: Props) {
+const ColumnContainer = (props: ColumnContainerProps) => {
+  const {
+    column,
+    deleteColumn,
+    updateColumn,
+    createTask,
+    tasks,
+    deleteTask,
+    updateTask,
+  } = props;
   const [editMode, setEditMode] = useState(false);
-
   const tasksIds = useMemo(() => {
     return tasks.map((task) => task.id);
   }, [tasks]);
@@ -57,18 +57,7 @@ function ColumnContainer({
       <div
         ref={setNodeRef}
         style={style}
-        className="
-      bg-columnBackgroundColor
-      opacity-40
-      border-2
-      border-pink-500
-      w-[350px]
-      h-[500px]
-      max-h-[500px]
-      rounded-md
-      flex
-      flex-col
-      "
+        className="bg-columnBackgroundColor opacity-40 border-2 border-pink-500 w-[350px] h-[500px] max-h-[500px] rounded-md flex flex-col"
       ></div>
     );
   }
@@ -78,14 +67,14 @@ function ColumnContainer({
       ref={setNodeRef}
       style={style}
       className="
-  bg-columnBackgroundColor
-  w-[350px]
-  h-[500px]
-  max-h-[500px]
-  rounded-md
-  flex
-  flex-col
-  "
+      bg-columnBackgroundColor
+      w-[350px]
+      h-[500px]
+      max-h-[500px]
+      rounded-md
+      flex
+      flex-col
+      "
     >
       {/* Column title */}
       <div
@@ -95,36 +84,35 @@ function ColumnContainer({
           setEditMode(true);
         }}
         className="
-      bg-mainBackgroundColor
-      text-md
-      h-[60px]
-      cursor-grab
-      rounded-md
-      rounded-b-none
-      p-3
-      font-bold
-      border-columnBackgroundColor
-      border-4
-      flex
-      items-center
-      justify-between
-      "
+        bg-mainBackgroundColor
+        text-md
+        h-[60px]
+        cursor-grab
+        rounded-md
+        rounded-b-none
+        p-3
+        font-bold
+        border-columnBackgroundColor
+        border-2
+        border-b-0
+        flex
+        items-center
+        justify-between
+        "
       >
         <div className="flex gap-2">
           <div
             className="
-        flex
-        justify-center
-        items-center
-        bg-columnBackgroundColor
-        px-2
-        py-1
-        text-sm
-        rounded-full
-        "
-          >
-            0
-          </div>
+            flex
+            justify-center
+            items-center
+            bg-columnBackgroundColor
+            px-2
+            py-1
+            text-sm
+            rounded-full
+            "
+          ></div>
           {!editMode && column.title}
           {editMode && (
             <input
@@ -147,20 +135,20 @@ function ColumnContainer({
             deleteColumn(column.id);
           }}
           className="
-        stroke-gray-500
-        hover:stroke-white
-        hover:bg-columnBackgroundColor
-        rounded
-        px-1
-        py-2
-        "
+          stroke-gray-500
+          hover:stroke-white
+          hover:bg-columnBackgroundColor
+          rounded
+          px-1
+          py-2
+          "
         >
           <TrashIcon />
         </button>
       </div>
 
       {/* Column task container */}
-      <div className="flex flex-grow flex-col gap-4 p-2 overflow-x-hidden overflow-y-auto">
+      <div className="flex flex-grow flex-col gap-4 p-2 overflow-x-hidden overflow-y-auto border-columnBackgroundColor border-2">
         <SortableContext items={tasksIds}>
           {tasks.map((task) => (
             <TaskCard
@@ -174,7 +162,7 @@ function ColumnContainer({
       </div>
       {/* Column footer */}
       <button
-        className="flex gap-2 items-center border-columnBackgroundColor border-2 rounded-md p-4 border-x-columnBackgroundColor hover:bg-mainBackgroundColor hover:text-rose-500 active:bg-black"
+        className="flex gap-2 items-center border-columnBackgroundColor border-2 border-t-0  p-4  hover:bg-mainBackgroundColor hover:text-rose-500 active:bg-black"
         onClick={() => {
           createTask(column.id);
         }}
@@ -184,6 +172,6 @@ function ColumnContainer({
       </button>
     </div>
   );
-}
+};
 
 export default ColumnContainer;

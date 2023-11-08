@@ -1,11 +1,16 @@
+import React from 'react'
 import KanbanBoard from '@/components/kanban-board'
 import { Navbar } from '@/components/navbar'
 
-export default function Home() {
+const Home = () => {
   return (
     <main>
-      <Navbar/>
-     <KanbanBoard/>
-    </main>
+    <Navbar/>
+   <KanbanBoard/>
+  </main>
   )
 }
+
+export default Home
+
+
