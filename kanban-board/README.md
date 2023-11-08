@@ -3,6 +3,9 @@
 
 Welcome to the Kanban Board  - a simple, intuitive, and efficient tool for managing your projects and tasks with a Kanban board.
 
+![Kanban Board Example](https://photos.google.com/photo/AF1QipNFoemEHh3lAPKzpuKqWXMPByy76mnjPd9aCtOr)
+
+
 ## Features
 
 - **Add Column**: Easily add a new column to your Kanban board to represent a new category or stage in your project.
