@@ -1,6 +1,4 @@
 
-```
-
 # Kanban App
 
 Welcome to the Kanban Board  - a simple, intuitive, and efficient tool for managing your projects and tasks with a Kanban board.
