@@ -10,7 +10,7 @@ Welcome to the Kanban Board  - a simple, intuitive, and efficient tool for manag
 
 ## Getting Started
 
-- git clone https://github.com/dhirendrakumar9032/Kanban_Board.git
+* git clone https://github.com/dhirendrakumar9032/Kanban_Board.git
 - cd kanban-board
 - npm install
 - npm run dev
